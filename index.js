@@ -7,14 +7,14 @@ $(function() {
     let submitted = $(event.currentTarget).find('input').val();
     let checkResults = function() {
       if (submitted % 5 === 0 && submitted % 3 === 0) {
-        $('.js-results').addClass('.fizzbuzz')
+        $('.js-results').replaceWith(`<div class="js-results fizzbuzz">${submitted}</div>`)
       } else if (submitted % 5 === 0) {
-        $('.js-results').addClass('.buzz')
+        $('.js-results').replaceWith(`<div class="js-results buzz">${submitted}</div>`)
       } else if (submitted % 3 === 0) {
-        $('.js-results').addClass('.fizz')
+        $('.js-results').replaceWith(`<div class="js-results fizz">${submitted}</div>`)
       }
     }
 
-    
+    checkResults();
   });
 });
